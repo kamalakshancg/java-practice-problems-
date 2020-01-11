@@ -1,0 +1,87 @@
+package LinkedList;
+
+public class TwoStackOneArray {
+	
+	int top1=-1;
+	int size=6;
+	int top2=size-1;
+	int stack[]=new int[size];
+	
+	int max=size/2;
+	
+	public void push1(int data)
+	{
+		if(top1==max-1)
+		{
+			System.out.println("stack is full");
+		}
+		else
+		{
+			top1++;
+			stack[top1]=data;
+			System.out.println(data+"is pushed into first stack");
+		}
+	}
+	
+	public void push2(int data1)
+	{
+		if(top2==max-1)
+		{
+			System.out.println("stack2 is full");
+		}
+		else
+		{
+			stack[top2]=data1;
+			top2--;
+			System.out.println(data1+"is pushed into the stack2");
+		}
+	}
+	
+	public void pop1()
+	{
+		if(top1==-1){
+			System.out.println("stack1 is empty");
+		}
+		else
+		{
+			int element=stack[top1];
+			top1--;
+			System.out.println(element+"is poped out of stack1");
+		}
+	}
+	public void pop2()
+	{
+		if(top2==size-1)
+		{
+			System.out.println("stack2 is empty");
+		}
+		else
+		{     
+			top2++;
+			int dataa=stack[top2];
+			System.out.println(dataa+"is poped out of stack2");
+		}
+	}
+
+	public static void main(String[] args) {
+		
+		TwoStackOneArray ob=new TwoStackOneArray();
+		ob.push1(1);
+		ob.push1(11);
+		ob.push1(111);
+		ob.push1(1111);
+		ob.pop1();
+		ob.pop1();
+		ob.pop1();
+		ob.pop1();
+		ob.push2(3);
+		ob.push2(30);
+		ob.push2(300);
+		ob.pop2();
+		ob.pop2();
+		ob.pop2();
+		ob.pop2();
+		ob.push2(4);
+	}
+
+}
